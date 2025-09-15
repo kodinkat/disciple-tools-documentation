@@ -6,8 +6,10 @@ Learn how to upload or change your profile picture in Disciple.Tools.
 
 Disciple.Tools supports profile pictures through two different systems depending on your site's configuration:
 
-1. **Direct Upload** - Upload images directly when storage connection is enabled
-2. **Gravatar Integration** - Use Gravatar service when direct upload is not available
+1. **S3 Storage Upload** - Upload images directly to secure cloud storage when S3 connection is enabled
+2. **Gravatar Integration** - Use Gravatar service when S3 storage is not available
+
+![Profile Picture Overview](./imgs/profile/profile-picture-overview.png)
 
 ## How to Change Your Profile Picture
 
@@ -30,20 +32,30 @@ Click on your **display name** in the top right corner of the screen to go to yo
 
 The profile picture options depend on your site's storage configuration:
 
-#### Option A: Direct Upload (When Storage is Enabled)
+#### Option A: S3 Storage Upload (When Storage is Enabled)
 
-If your site has storage connections enabled, you will see:
+If your site has S3 storage connections enabled, you will see:
 
 1. **Current Picture Display**: Your existing profile picture (or default avatar) appears at 100px width
 2. **Upload Section**: Text reading "Upload new profile image" 
 3. **File Input**: A button to select your image file
 4. **Accepted Formats**: `.gif`, `.jpg`, `.jpeg`, `.png` files only
+5. **Secure Storage**: Files are stored privately in your configured S3 bucket
+
+![S3 Profile Picture Upload](./imgs/profile/s3-profile-upload.png)
 
 **To upload a new picture:**
 1. Click on the file input field
 2. Select an image file from your device (GIF, JPG, JPEG, or PNG format)
 3. The file will be selected for upload
 4. Click the **"Save"** button at the bottom of the modal
+
+
+**S3 Storage Benefits:**
+- **Secure Storage**: Your profile picture is stored privately in cloud storage
+- **Automatic Thumbnails**: System generates optimized thumbnails for display
+- **Access Control**: Only authorized users can view your profile picture
+- **Backup Protection**: Files are safely stored in redundant cloud storage
 
 #### Option B: Gravatar Integration (Default)
 
@@ -71,11 +83,23 @@ If storage connections are not enabled, you will see:
 
 Disciple.Tools displays the following security guidance for profile pictures:
 
-**For Direct Upload Systems:**
+**For S3 Storage Systems:**
 > "Disciple.Tools System does not store images. All media assets will be placed within specified media connection storage service. If you have security concerns, we suggest not using a personal photo, but instead choose a cartoon, abstract, or alias photo to represent you."
 
 **For Gravatar Systems:**
 > "Disciple.Tools System does not store images. For profile images we use Gravatar (Globally Recognized Avatar). If you have security concerns, we suggest not using a personal photo, but instead choose a cartoon, abstract, or alias photo to represent you."
+
+
+### S3 Storage Security Features
+
+When using S3 storage for profile pictures, your images benefit from:
+
+- **Private Storage**: Images are not publicly accessible
+- **Encrypted Transfer**: All uploads use secure HTTPS connections
+- **Access Control**: Only authorized users can view your profile picture
+- **Secure URLs**: Temporary, time-limited access links for viewing
+- **Audit Trail**: All access to your profile picture is logged
+
 
 ## Troubleshooting
 
@@ -87,9 +111,10 @@ Disciple.Tools displays the following security guidance for profile pictures:
 
 ### Upload Button Not Visible
 If you don't see an upload option:
-- Your site uses Gravatar integration instead of direct uploads
-- Contact your administrator if you need direct upload capabilities
+- Your site uses Gravatar integration instead of S3 storage uploads
+- Contact your administrator if you need S3 storage capabilities
 - Use the Gravatar method described above
+
 
 ### Gravatar Not Appearing
 1. **Email match**: Ensure your Gravatar email exactly matches your Disciple.Tools system email
@@ -100,4 +125,10 @@ If you don't see an upload option:
 
 - [Change System Email](change-system-email.md) - Update the email address used for Gravatar
 - [Edit Personal Information](edit-personal-information.md) - Modify other profile details
-- [Change User Language](change-user-language.md) - Set your interface language preferences 
+- [Change User Language](change-user-language.md) - Set your interface language preferences
+
+## Related Documentation
+
+- [S3 Storage Settings](../wp-admin/dt-settings/storage.md) - Learn about S3 storage configuration
+- [S3 Storage Setup Guide](../wp-admin/dt-settings/storage-setup.md) - Detailed setup instructions
+- [S3 Storage Usage Guide](../wp-admin/dt-settings/storage-usage.md) - User interface features 
