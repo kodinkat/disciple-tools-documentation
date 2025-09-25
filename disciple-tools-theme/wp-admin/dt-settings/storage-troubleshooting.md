@@ -11,7 +11,6 @@ S3 storage issues typically fall into these categories:
 - Performance and timeout issues
 - Configuration mistakes
 
-
 ## Connection Issues
 
 ### Test Connection Fails
@@ -32,7 +31,6 @@ S3 storage issues typically fall into these categories:
    - Ensure keys are active and not expired
    - Test credentials with your provider's console
 
-
 2. **Check Endpoint URL**
    - For AWS S3: Leave endpoint blank or use `https://s3.amazonaws.com`
    - For MinIO: Use `http://your-server:9000` or `https://your-server:9000`
@@ -43,12 +41,6 @@ S3 storage issues typically fall into these categories:
    - Check bucket name spelling
    - Ensure bucket is in the correct region
    - Verify bucket is accessible with your credentials
-
-
-4. **Check Network Connectivity**
-   - Test internet connection
-   - Verify firewall allows outbound HTTPS (port 443)
-   - Check for proxy or VPN interference
 
 ### Authentication Errors
 
@@ -63,7 +55,6 @@ S3 storage issues typically fall into these categories:
    - Create new access keys in your provider console
    - Update credentials in Disciple.Tools settings
    - Test connection with new keys
-
 
 2. **Check IAM Permissions** (AWS)
    - Ensure user has required S3 permissions
@@ -95,7 +86,6 @@ S3 storage issues typically fall into these categories:
    - Compress large images before upload
    - Use appropriate file formats
 
-
 2. **Verify File Type**
    - Ensure file type is supported
    - Check file extension matches content
@@ -105,7 +95,6 @@ S3 storage issues typically fall into these categories:
    - Check internet speed and stability
    - Try uploading from different network
    - Test with smaller files first
-
 
 4. **Check Storage Space**
    - Verify S3 bucket has available space
@@ -127,7 +116,6 @@ S3 storage issues typically fall into these categories:
    - Compress images before upload
    - Use appropriate image formats
    - Split large files if necessary
-
 
 3. **Check Server Resources**
    - Monitor server memory usage
@@ -153,7 +141,6 @@ S3 storage issues typically fall into these categories:
    - Check object-level permissions
    - Ensure proper ACL settings
 
-
 2. **Configure CORS** (if needed)
    - Add CORS rules for web access
    - Allow appropriate HTTP methods
@@ -177,7 +164,6 @@ S3 storage issues typically fall into these categories:
    - Ensure policies include required actions
    - Check resource ARNs are correct
    - Verify policy syntax
-
 
 2. **Check Bucket Policies**
    - Verify bucket policy allows access
@@ -207,7 +193,6 @@ S3 storage issues typically fall into these categories:
    - Disable for AWS S3 (unless using custom endpoint)
    - Test both settings if unsure
 
-
 2. **Region Configuration**
    - Use correct region for your bucket
    - For some providers, use `auto` or `us-east-1`
@@ -228,7 +213,6 @@ S3 storage issues typically fall into these categories:
    - Verify each site has unique site ID
    - Check file prefixes in S3 console
    - Ensure proper site separation
-
 
 2. **Shared vs. Separate Buckets**
    - Consider using separate buckets for each site

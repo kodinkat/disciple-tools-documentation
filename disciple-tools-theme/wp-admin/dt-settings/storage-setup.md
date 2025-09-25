@@ -45,7 +45,7 @@ AWS S3 is the most popular cloud storage service. Follow these steps to set up A
 2. Click **Users** → **Create user**
 3. Enter a username (e.g., "disciple-tools-storage")
 4. Select **Programmatic access** only
-5. Attach the following policy (create custom policy if needed):
+5. Attach the following policy (create custom policy if needed). Make sure to replace `your-bucket-name` with your actual bucket name:
 
 ```json
 {
@@ -123,12 +123,17 @@ Backblaze B2 offers cost-effective cloud storage with S3-compatible API. Here's 
 
 1. Sign up for a [Backblaze B2 account](https://backblaze.com/b2)
 2. Create a new bucket in the B2 console
-3. Note your bucket name and region
+3. Choose a unique bucket name
+4. set the bucket type to private
+5. Encryption can be enabled for additional security
+6. Note your bucket name. Ex : `my-disciple-tools-bucket`
+7. Note your Endpoint. Ex : `s3.us-west-000.backblazeb2.com`
+8. Note your Region. Ex : `us-west-000`. (you get this from the endpoint, it's the part after `s3.` and before `.backblazeb2.com`)
 
 
 #### Step 2: Generate Application Keys
 
-1. In the B2 console, go to **App Keys**
+1. In the B2 console, go to **Application Keys**
 2. Click **Add a New Application Key**
 3. Configure the key:
    - **Key Name**: "Disciple.Tools Storage"
@@ -148,7 +153,7 @@ Backblaze B2 offers cost-effective cloud storage with S3-compatible API. Here's 
    - **Region**: Your B2 region (e.g., `us-west-000`)
    - **Bucket**: Your B2 bucket name
    - **Endpoint**: `https://s3.us-west-000.backblazeb2.com` (adjust region)
-   - **Path-style endpoint**: Enable this for B2
+   - **Path-style endpoint**: Leave disabled
 
 
 ### Cloudflare R2 Setup
@@ -160,17 +165,18 @@ Cloudflare R2 offers zero egress fees and S3-compatible storage. Here's how to s
 1. Log in to your [Cloudflare dashboard](https://dash.cloudflare.com)
 2. Navigate to **R2 Object Storage**
 3. Click **Create bucket**
-4. Enter a bucket name and select your preferred location
+4. Enter a bucket name. You can let Cloudflare auto set the location.
+5. Under **Settings**, copy the S3 API endpoint for your account. It will look like `https://your-account-id.r2.cloudflarestorage.com`
 
 
 #### Step 2: Generate API Token
 
-1. In the R2 section, go to **Manage R2 API tokens**
-2. Click **Create API token**
+1. Click R2 Object Storage section and then **Manage R2 API tokens**
+2. Click **Create Account API token**
 3. Configure the token:
    - **Token name**: "Disciple.Tools Storage"
    - **Permissions**: Object Read & Write
-   - **Bucket**: Select your bucket
+   - **Bucket**: Select "Apply to specific buckets only" and then select your bucket
 4. Save the **Access Key ID** and **Secret Access Key**
 
 
@@ -184,7 +190,7 @@ Cloudflare R2 offers zero egress fees and S3-compatible storage. Here's how to s
    - **Secret**: Your R2 Secret Access Key
    - **Region**: `auto` (Cloudflare R2 default)
    - **Bucket**: Your R2 bucket name
-   - **Endpoint**: `https://your-account-id.r2.cloudflarestorage.com`
+   - **Endpoint**: `https://your-account-id.r2.cloudflarestorage.com` (make sure not to include /bucket-name)
    - **Path-style endpoint**: Enable this for R2
 
 
@@ -198,17 +204,6 @@ After configuring any provider, always test your connection:
 4. If successful, you'll see a confirmation message
 
 ![Connection Test Success](./imgs/storage/setup/connection-test-success.png)
-
-## Security Best Practices
-
-When setting up S3 storage, follow these security recommendations:
-
-- **Use IAM policies** (AWS) or equivalent access controls to limit permissions
-- **Enable encryption** at rest and in transit
-- **Rotate access keys** regularly
-- **Monitor access logs** for unusual activity
-- **Use HTTPS endpoints** for all connections
-- **Keep credentials secure** and never share them
 
 
 ## Troubleshooting Setup Issues
