@@ -28,16 +28,16 @@ Disciple.Tools S3 storage supports various file types depending on the context:
 
 #### Profile Pictures
 - **Image formats**: `.gif`, `.jpg`, `.jpeg`, `.png`
-- **Maximum size**: Varies by provider (typically 10MB)
+- **Maximum size**: Varies by site's upload limit (WordPress/server setting)
 - **Automatic thumbnails**: Generated for display optimization
 
 #### Image Comments
 - **Image formats**: `.gif`, `.jpg`, `.jpeg`, `.png`
 
 #### Voice Messages
-- **Audio formats**: `.mp3`, `.wav`, `.m4a`, `.webm`
+- **Audio formats**: Browser-supported formats (commonly WebM/Opus; may be OGG/Opus or MP4 depending on browser)
 - **Recording quality**: Optimized for voice clarity
-- **File size limits**: Compressed for efficient storage
+- **File size limits**: Varies by site's upload limit
 
 
 ## Drag and Drop Functionality
@@ -139,8 +139,8 @@ Users can manage their uploaded files through various interfaces.
 Files stored in S3 are protected by:
 - **Presigned URLs**: Temporary, secure access links
 - **User permissions**: Only authorized users can access files
-- **Time-limited access**: URLs expire after 24 hours
-- **Site isolation**: Files are organized by site ID
+- **Time-limited access**: URLs are secured and temporary
+- **Site isolation**: Files are automatically organized by site ID prefix
 
 ## Voice Message Features
 
@@ -186,10 +186,10 @@ The S3 storage system includes several performance optimizations.
 
 ### Upload Optimization
 
-- **Chunked uploads**: Large files uploaded in smaller pieces
+- **Efficient uploads**: Files uploaded directly to S3
 - **Parallel processing**: Multiple operations handled simultaneously
-- **Compression**: Files compressed before upload when beneficial
-- **Caching**: Frequently accessed files cached locally
+- **Compression**: Images automatically compressed for thumbnails
+- **Caching**: Frequently accessed files served through WordPress
 
 
 ### User Experience Enhancements
@@ -207,8 +207,8 @@ S3 storage provides enhanced security for sensitive files.
 
 - **Encryption in transit**: All uploads use HTTPS
 - **Encryption at rest**: Files encrypted in S3 storage
-- **Access logging**: All file access is logged
-- **Audit trails**: Complete history of file operations
+- **Access logging**: File operations are logged through WordPress comment system
+- **Audit trails**: File operations are tracked through WordPress activity
 
 
 ### Privacy Controls

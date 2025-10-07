@@ -59,10 +59,7 @@ The system accepts various file types depending on the field:
 - Automatic thumbnail generation
 
 
-**Audio Files**:
-- `.mp3`, `.wav`, `.m4a`, `.webm`
-- Maximum size: 10MB
-- Playback controls available
+Note: Audio comments are recorded via the browser voice recorder. See [Voice and Picture Comments](./details-voice-picture-comments.md) for details on supported audio formats and usage.
 
 
 ### Step 3: Upload Progress
@@ -118,43 +115,11 @@ On mobile devices, the upload experience is optimized for touch:
 - **Offline Handling**: Graceful handling of network issues
 
 
-## File Storage and Security
+## File Security
 
-### S3 Storage Benefits
-
-Files uploaded to records are stored securely in your S3 bucket:
-
-- **Private Storage**: Files are not publicly accessible
-- **Encrypted Transfer**: All uploads use secure HTTPS connections
-- **Access Control**: Only authorized users can view files
-- **Secure URLs**: Temporary, time-limited access links
-- **Audit Trail**: All file access is logged
-
-
-### File Organization
-
-Files are organized in your S3 bucket with the following structure:
-
-```
-your-bucket/
-├── site-id-1/
-│   ├── contacts/
-│   ├── groups/
-│   ├── users/
-│   └── record-type-x/
-└── site-id-2/
-    ├── contacts/
-    ├── groups/
-    ├── users/
-    └── record-type-x/
-```
-
-This organization ensures:
-- **Site Isolation**: Each site's files are separated
-- **Type Organization**: Files are grouped by purpose
-- **Easy Management**: Clear structure for administrators
-
-![File Organization](./imgs/details-view/file-organization.png)
+- **Private access**: Files are stored privately and are permission-checked in the app.
+- **Encrypted transfer**: Uploads occur over HTTPS.
+- **Access control**: Only users with access to the record can view/download files.
 
 ## Image Thumbnail Generation
 
@@ -177,24 +142,9 @@ For image uploads, the system automatically generates thumbnails:
 
 ## File Access and Sharing
 
-### Viewing Uploaded Files
-
-Once uploaded, files can be accessed in several ways:
-
-1. **Direct View**: Click the file to view in browser
-2. **Download**: Right-click to download the file
-3. **Preview**: Hover over images to see preview
-4. **Full Screen**: Click images to view in full screen
-
-
 ### Secure File Access
 
-All file access is controlled through:
-
-- **Presigned URLs**: Temporary, secure access links
-- **Time Limits**: URLs expire after 24 hours
-- **User Permissions**: Only authorized users can access files
-- **Access Logging**: All file access is recorded
+Access to files respects your Disciple.Tools permissions. Links are secured; users without access to the record cannot view the file.
 
 
 ## Troubleshooting File Uploads
@@ -202,7 +152,7 @@ All file access is controlled through:
 ### Common Upload Issues
 
 **File Too Large**:
-- Check file size limits (typically 10MB)
+- Check your site's upload limit (set by WordPress/server)
 - Compress images before upload
 - Use appropriate file formats
 
@@ -250,7 +200,8 @@ Common error messages and solutions:
 
 ## Related Documentation
 
-- [S3 Storage Settings](../wp-admin/dt-settings/storage.md) - Learn about S3 storage configuration
-- [S3 Storage Setup Guide](../wp-admin/dt-settings/storage-setup.md) - Detailed setup instructions
-- [S3 Storage Usage Guide](../wp-admin/dt-settings/storage-usage.md) - User interface features
-- [S3 Storage Troubleshooting](../wp-admin/dt-settings/storage-troubleshooting.md) - Common issues and solutions
+- [Voice and Picture Comments](./details-voice-picture-comments.md)
+- [S3 Storage Settings](../wp-admin/dt-settings/storage.md)
+- [S3 Storage Setup Guide](../wp-admin/dt-settings/storage-setup.md)
+- [S3 Storage Usage Guide](../wp-admin/dt-settings/storage-usage.md)
+- [S3 Storage Troubleshooting](../wp-admin/dt-settings/storage-troubleshooting.md)

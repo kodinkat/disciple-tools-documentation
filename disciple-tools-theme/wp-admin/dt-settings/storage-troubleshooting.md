@@ -29,7 +29,7 @@ S3 storage issues typically fall into these categories:
 1. **Verify Credentials**
    - Double-check Access Key and Secret Key
    - Ensure keys are active and not expired
-   - Test credentials with your provider's console
+   - Click Save, then use the Test Connection button in Disciple.Tools
 
 2. **Check Endpoint URL**
    - For AWS S3: Leave endpoint blank or use `https://s3.amazonaws.com`
@@ -57,7 +57,11 @@ S3 storage issues typically fall into these categories:
    - Test connection with new keys
 
 2. **Check IAM Permissions** (AWS)
-   - Ensure user has required S3 permissions
+   - Ensure user has the following required S3 permissions
+      - Create Objects
+      - Read Objects
+      - Update Objects
+      - Delete Objects
    - Verify bucket policy allows access
    - Check for conflicting policies
 
@@ -82,7 +86,7 @@ S3 storage issues typically fall into these categories:
 **Solutions**:
 
 1. **Check File Size**
-   - Verify file is under size limits (typically 10MB)
+   - Verify the file is under your site's upload limit (WordPress/server setting)
    - Compress large images before upload
    - Use appropriate file formats
 
@@ -137,14 +141,15 @@ S3 storage issues typically fall into these categories:
 **Solutions**:
 
 1. **Check Bucket Permissions**
-   - Verify bucket allows public read access (if needed)
-   - Check object-level permissions
-   - Ensure proper ACL settings
+   - Ensure the credentials can PutObject, GetObject, DeleteObject, and ListBucket for the bucket
+   - Check object-level permissions if using bucket policies
+   - Avoid making the bucket public; Disciple.Tools serves files to authorized users
 
-2. **Configure CORS** (if needed)
-   - Add CORS rules for web access
-   - Allow appropriate HTTP methods
-   - Set proper headers
+2. **Configure [Cross-Origin Resource Sharing (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)** (if needed)
+   - Most flows are server-side and do not require CORS
+      - Note: See your server-side provider's documentation regarding updating CORS setup; which is beyond the scope of this documentation.
+   - If your setup makes browser-direct requests to the endpoint, allow GET and HEAD from your site origin
+   - Keep rules minimal; avoid wildcarding credentials
 
 3. **Verify File Paths**
    - Check file keys in S3 console
@@ -189,9 +194,9 @@ S3 storage issues typically fall into these categories:
 **Solutions**:
 
 1. **Path-Style Endpoint**
-   - Enable for MinIO, Backblaze B2, and Cloudflare R2
-   - Disable for AWS S3 (unless using custom endpoint)
-   - Test both settings if unsure
+   - Commonly required for MinIO
+   - Not required for AWS S3, Backblaze B2, or Cloudflare R2
+   - Only enable if your provider requires it
 
 2. **Region Configuration**
    - Use correct region for your bucket
@@ -209,10 +214,10 @@ S3 storage issues typically fall into these categories:
 
 **Solutions**:
 
-1. **Site ID Isolation**
-   - Verify each site has unique site ID
-   - Check file prefixes in S3 console
-   - Ensure proper site separation
+1. **Site ID Prefixing**
+   - Disciple.Tools automatically prefixes object keys with the current site ID
+   - No manual action is needed to separate sites when sharing a bucket
+   - In your provider's bucket dashboard, you will see keys starting with your site ID
 
 2. **Shared vs. Separate Buckets**
    - Consider using separate buckets for each site

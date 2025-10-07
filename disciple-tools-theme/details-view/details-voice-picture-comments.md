@@ -26,6 +26,10 @@ You can record and post a voice message directly within the "Comments and Activi
 
 Once saved, the voice message will appear in the activity feed with an audio player that anyone with access to the record can listen to.
 
+#### Notes about audio format
+- Recordings are saved using a browser-supported format (commonly WebM/Opus; depending on your browser it may also use OGG/Opus or MP4).
+- The exact format depends on your browser; there is no conversion to MP3.
+
 ## Picture Comments
 
 You can upload a picture to be posted as a comment in the activity feed. This is useful for sharing screenshots, photos of events, or other visual information.

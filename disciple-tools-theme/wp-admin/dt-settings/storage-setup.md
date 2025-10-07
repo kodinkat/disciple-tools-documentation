@@ -191,7 +191,7 @@ Cloudflare R2 offers zero egress fees and S3-compatible storage. Here's how to s
    - **Region**: `auto` (Cloudflare R2 default)
    - **Bucket**: Your R2 bucket name
    - **Endpoint**: `https://your-account-id.r2.cloudflarestorage.com` (make sure not to include /bucket-name)
-   - **Path-style endpoint**: Enable this for R2
+   - **Path-style endpoint**: Leave disabled for R2
 
 
 ## Testing Your Setup
