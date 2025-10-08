@@ -90,8 +90,8 @@ Voice messages work on mobile devices with:
 
 ## Related Documentation
 
+- [Adding Pictures to Records](./pictures.md)
 - [Comments and Activity](./comments.md)
-- [Add Pictures](./pictures.md)
 - [S3 Storage Settings](../wp-admin/dt-settings/storage/storage.md)
 - [S3 Storage Setup Guide](../wp-admin/dt-settings/storage/storage-setup.md)
 - [S3 Storage Usage Guide](../wp-admin/dt-settings/storage/storage-usage.md)

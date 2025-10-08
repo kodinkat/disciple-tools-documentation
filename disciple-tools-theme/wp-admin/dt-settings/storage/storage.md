@@ -14,7 +14,7 @@ This document outlines how to configure external S3-compatible storage for your 
     - [Testing Your Connection](#testing-your-connection)
 - **User Features**
     - [Profile Picture Uploads](../../profile/change-profile-picture.md)
-    - [Uploading Pictures](../../details-view/uploading-pictures.md)
+    - [Adding Pictures to Records](../../details-view/pictures.md)
     - [Voice Messages](../../details-view/voice-messages.md)
 - **Troubleshooting**
     - [Common Issues](./storage-troubleshooting.md)
