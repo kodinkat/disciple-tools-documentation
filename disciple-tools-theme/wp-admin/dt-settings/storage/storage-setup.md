@@ -203,7 +203,7 @@ After configuring any provider, always test your connection:
 3. Check for any error messages
 4. If successful, you'll see a confirmation message
 
-![Connection Test Success](./imgs/storage/setup/connection-test-success.png)
+![Connection Test Success](./imgs/connection-test-success.png)
 
 
 ## Troubleshooting Setup Issues

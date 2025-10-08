@@ -284,41 +284,6 @@ S3 storage issues typically fall into these categories:
 | "Invalid file type" | Unsupported format | Use supported file format |
 
 
-## Diagnostic Tools
-
-### Connection Testing
-
-Use these methods to diagnose connection issues:
-
-1. **Provider Console Test**
-   - Test credentials in provider's web console
-   - Verify bucket access and permissions
-   - Check for service outages
-
-2. **Command Line Tools**
-   - Use AWS CLI or provider-specific tools
-   - Test basic operations (list, upload, download)
-   - Verify network connectivity
-
-3. **Browser Developer Tools**
-   - Check network requests in browser
-   - Look for HTTP error codes
-   - Monitor request/response headers
-
-### Log Analysis
-
-Check these logs for error details:
-
-1. **Disciple.Tools Logs**
-   - WordPress error logs
-   - Plugin-specific logs
-   - Server error logs
-
-2. **S3 Provider Logs**
-   - Access logs (if enabled)
-   - CloudTrail logs (AWS)
-   - Provider-specific logging
-
 ## Getting Additional Help
 
 ### When to Contact Support

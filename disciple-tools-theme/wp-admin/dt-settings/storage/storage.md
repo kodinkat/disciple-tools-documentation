@@ -35,7 +35,7 @@ Configuring S3 storage provides a secure alternative for handling media. When en
 
 Using S3 compatible storage ensures that your media is protected and only accessible to authorized users.
 
-![Storage Settings Overview](./imgs/storage/storage-settings-overview.png)
+![Storage Settings Overview](./imgs/storage-settings-overview.png)
 
 ## Accessing Storage Settings
 
@@ -83,13 +83,13 @@ Here is a description of each field required to set up your S3 connection:
 
 -   **Path-style endpoint**: Enable this option if your storage provider requires path-style URL addressing (e.g., `https://s3.example.com/bucket-name`). This is commonly required for MinIO setups. If you are using Amazon S3, you can typically leave this disabled to use virtual-hosted-style addressing (e.g., `https://bucket-name.s3.example.com`).
 
-![Storage Connection Fields](./imgs/storage/connection-fields.png)
+![Storage Connection Fields](./imgs/connection-fields.png)
 
 ## Testing Your Connection
 
 After filling in all the required details, click the **Save** button to store your configuration. You can also click the **Test Connection** button to verify that your settings are correct and Disciple.Tools can successfully connect to the S3 bucket.
 
-![Test Connection Button](./imgs/storage/test-connection.png)
+![Test Connection Button](./imgs/test-connection.png)
 
 The test connection feature will:
 - Validate your access credentials
