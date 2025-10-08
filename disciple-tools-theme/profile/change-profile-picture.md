@@ -127,6 +127,6 @@ If you don't see an upload option:
 
 ## Related Documentation
 
-- [S3 Storage Settings](../wp-admin/dt-settings/storage.md) - Learn about S3 storage configuration
-- [S3 Storage Setup Guide](../wp-admin/dt-settings/storage-setup.md) - Detailed setup instructions
-- [S3 Storage Usage Guide](../wp-admin/dt-settings/storage-usage.md) - User interface features 
+- [S3 Storage Settings](../wp-admin/dt-settings/storage/storage.md) - Learn about S3 storage configuration
+- [S3 Storage Setup Guide](../wp-admin/dt-settings/storage/storage-setup.md) - Detailed setup instructions
+- [S3 Storage Usage Guide](../wp-admin/dt-settings/storage/storage-usage.md) - User interface features 
