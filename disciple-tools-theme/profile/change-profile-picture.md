@@ -98,8 +98,6 @@ When using S3 storage for profile pictures, your images benefit from:
 - **Encrypted Transfer**: All uploads use secure HTTPS connections
 - **Access Control**: Only authorized users can view your profile picture
 - **Secure URLs**: Temporary, time-limited access links for viewing
-- **Audit Trail**: All access to your profile picture is logged
-
 
 ## Troubleshooting
 

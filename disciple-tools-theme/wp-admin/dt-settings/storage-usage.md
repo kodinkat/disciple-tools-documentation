@@ -40,6 +40,93 @@ Disciple.Tools S3 storage supports various file types depending on the context:
 - **File size limits**: Varies by site's upload limit
 
 
+## File Organization in S3
+
+Files uploaded to S3 are organized in a structured hierarchy to ensure security, isolation, and easy management.
+
+### Directory Structure
+
+All files are stored in your S3 bucket following this pattern:
+
+```
+your-bucket/
+├── site-id/                          (first 30 characters of site ID)
+│   ├── users/                        (user profile pictures)
+│   │   ├── randomstring123...xyz.png
+│   │   ├── randomstring123...xyz_thumbnail.png
+│   │   └── randomstring123...xyz_large_thumbnail.png
+│   ├── contacts/                     (contact-related files)
+│   │   ├── randomstring456...abc.jpg
+│   │   ├── randomstring456...abc_thumbnail.jpg
+│   │   ├── randomstring456...abc_large_thumbnail.jpg
+│   │   └── voicerecording789...def.webm
+│   ├── groups/                       (group-related files)
+│   │   └── randomstring321...ghi.png
+│   └── [other-post-types]/           (files for other record types)
+```
+
+### Folder Organization
+
+#### Site ID Prefix
+
+- **Purpose**: Isolates files when multiple Disciple.Tools sites share the same S3 bucket
+- **Format**: First 30 characters of the site's unique identifier
+- **Example**: `abc123def456ghi789jkl012mno345p/`
+- **Automatic**: Applied automatically to all uploaded files
+
+#### Content Type Folders
+
+Files are organized by content type:
+
+- **`users/`**: User profile pictures
+- **`contacts/`**: Files attached to contact records (images, voice messages)
+- **`groups/`**: Files attached to group records
+- **`[post-type]/`**: Files for any custom post types in your system
+
+#### File Naming
+
+Each file receives a unique, randomly-generated name:
+
+- **Length**: 64 random alphanumeric characters
+- **Extension**: Original file extension is preserved
+- **Example**: `aB3dE5fG7hI9jK1lM3nO5pQ7rS9tU1vW3xY5zA7bC9dE1fG3hI5jK7lM9nO1pQ3rS5tU.jpg`
+- **Purpose**: Ensures uniqueness and prevents naming conflicts
+
+### Image Thumbnail Organization
+
+For image files, the system automatically generates and stores two additional thumbnail versions:
+
+#### Small Thumbnail
+- **Naming**: Original filename + `_thumbnail` before extension
+- **Size**: 100px width (height proportional)
+- **Usage**: List views, previews, and small displays
+- **Example**: `randomstring123...xyz_thumbnail.png`
+
+#### Large Thumbnail
+- **Naming**: Original filename + `_large_thumbnail` before extension
+- **Size**: 1200px width (height proportional)
+- **Usage**: Detailed views and medium-sized displays
+- **Example**: `randomstring123...xyz_large_thumbnail.png`
+
+### Example: Voice Message Organization
+
+Voice messages are organized in your S3 bucket:
+
+```
+your-bucket/
+├── site-id/
+│   ├── contacts/
+│   │   ├── audio-recording-abc123def456...xyz.webm
+│   └── groups/
+│       ├── audio-recording-ghi789jkl012...uvw.webm
+```
+
+This organization ensures:
+- **Message Isolation**: Each record type's messages are separated
+- **Easy Management**: Clear structure for administrators
+- **Privacy Protection**: Messages are organized but not publicly accessible
+
+
 ## Drag and Drop Functionality
 
 The upload interface supports modern drag-and-drop functionality for improved user experience.
@@ -208,8 +295,6 @@ S3 storage provides enhanced security for sensitive files.
 - **Encryption in transit**: All uploads use HTTPS
 - **Encryption at rest**: Files encrypted in S3 storage
 - **Access logging**: File operations are logged through WordPress comment system
-- **Audit trails**: File operations are tracked through WordPress activity
-
 
 ### Privacy Controls
 
