@@ -38,3 +38,19 @@ This dropdown menu provides access to administrative functions for the record. T
 -   **Archive Record**: Move a personal contact to an archived state, removing it from active lists.
 -   **Make a user from this contact**: Create a new Disciple.Tools user account from the contact's information. (Requires special permissions).
 -   **Link to an existing user**: Link the contact record to an existing Disciple.Tools user account. (Requires special permissions).
+
+## How do I change a contact type?
+
+Contact types define the category or classification of a contact record in Disciple.Tools. For example, you might change a contact from a Standard Contact to a Private Contact, or to another type configured in your system. Changing the contact type can affect which fields are available and how the contact appears in lists and reports.
+
+To change a contact's type:
+
+1. Navigate to the contact record you want to modify.
+2. In the **Admin Actions** dropdown at the top of the page, click to open the menu.
+3. Select **Change Record Type** from the list of options. This will open a modal dialog.
+4. In the modal, you will see a dropdown menu showing all available contact types. Each type may include a description explaining its purpose.
+5. Click the dropdown menu and select the new contact type you want to apply.
+6. Click the **Confirm** button to save the change.
+7. The page will reload automatically, and the contact will now be updated to the new type you selected.
+
+If you change your mind before confirming, click the **Cancel** button or close the modal to exit without making changes.
