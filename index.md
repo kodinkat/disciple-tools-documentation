@@ -23,7 +23,8 @@ Comprehensive guides for working with individual records in detail view.
 #### Record Management
 - **[Editing Records](./disciple-tools-theme/details-view/editing-records.md)** - How to modify and update record information
 - **[Comments](./disciple-tools-theme/details-view/comments.md)** - Adding, editing, and managing comments on records
-- **[Voice and Picture Comments](./disciple-tools-theme/details-view/details-voice-picture-comments.md)** - How to use voice and picture comments
+- **[Adding Pictures to Records](./disciple-tools-theme/details-view/pictures.md)** - How to upload pictures to records and comments
+- **[Voice Messages](./disciple-tools-theme/details-view/voice-messages.md)** - Recording and attaching voice messages to records
 - **[Record Tasks Modal](./disciple-tools-theme/details-view/record-tasks-modal.md)** - Using the tasks interface for record management
 - **[Record Access](./disciple-tools-theme/details-view/record-access.md)** - Managing permissions and access to records
 - **[Private Fields](./disciple-tools-theme/details-view/private-fields.md)** - Working with confidential information
@@ -157,7 +158,12 @@ Complete guide to customizing your Disciple.Tools instance through the admin int
 - **[FAQ](./disciple-tools-theme/wp-admin/customizations/faq.md)** - Frequently asked questions about customizations
 
 ### DT Settings
-- **[Storage](./disciple-tools-theme/wp-admin/dt-settings/storage.md)** - How to configure storage settings
+
+#### Storage
+- **[Storage Settings](./disciple-tools-theme/wp-admin/dt-settings/storage/storage.md)** - Configure S3-compatible storage for secure media uploads
+- **[Storage Setup Guide](./disciple-tools-theme/wp-admin/dt-settings/storage/storage-setup.md)** - Step-by-step setup instructions for S3 providers
+- **[Storage Usage Guide](./disciple-tools-theme/wp-admin/dt-settings/storage/storage-usage.md)** - How users interact with S3 storage features
+- **[Storage Troubleshooting](./disciple-tools-theme/wp-admin/dt-settings/storage/storage-troubleshooting.md)** - Resolve common storage issues
 
 ## Plugins
 
