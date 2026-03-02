@@ -106,3 +106,4 @@ If the test fails, check your credentials and bucket settings. For detailed setu
 - [Set up your S3 storage connection →](./storage-setup.md)
 - [Learn about user file upload features →](./storage-usage.md)
 - [Troubleshoot common issues →](./storage-troubleshooting.md)
+- [Configure Workflows (automation) →](../workflows/workflows.md)
